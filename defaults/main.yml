@@ -1,0 +1,5 @@
+---
+pip_package: python-pip
+pip_version: 9.0.1
+
+pip_install_packages: []

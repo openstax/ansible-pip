@@ -1,0 +1,17 @@
+---
+- name: install pip package
+  apt:
+    name: "{{ pip_package }}"
+    state: present
+
+- name: ensure latest pip
+  pip:
+    name: pip
+    version: "{{ pip_version }}"
+
+- name: install various pip packages
+  pip:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+  with_items: "{{ pip_install_packages }}"

@@ -1,0 +1,5 @@
+---
+- import_tasks: pip.yml
+  tags:
+    - pip
+    - config
