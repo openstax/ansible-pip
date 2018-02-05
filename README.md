@@ -33,7 +33,7 @@ Including an example of how to use your role (for instance, with variables passe
         pip_package: python3-pip
         pip_version: 9.0.1
       roles:
-      - role: ansible-pip
+        - role: ansible-pip
 
 License
 -------
