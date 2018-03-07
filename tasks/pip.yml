@@ -15,4 +15,6 @@
     name: "{{ item.name | default(item) }}"
     version: "{{ item.version | default(omit) }}"
     state: "{{ item.state | default(omit) }}"
+    virtualenv: "{{ item.virtualenv | default(omit) }}"
+    virtualenv_python: "{{ item.virtualenv_python | default(omit) }}"
   with_items: "{{ pip_install_packages }}"
