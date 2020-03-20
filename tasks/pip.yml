@@ -1,16 +1,19 @@
 ---
 - name: install pip package
+  become: true
   apt:
     name: "{{ pip_package }}"
     state: present
 
 - name: ensure latest pip
+  become: true
   pip:
     name: pip
     executable: "{{ pip_executable | default(omit) }}"
     version: "{{ pip_version }}"
 
 - name: install various pip packages
+  become: true
   pip:
     name: "{{ item.name | default(item) }}"
     version: "{{ item.version | default(omit) }}"
